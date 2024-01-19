@@ -6,6 +6,44 @@
     <title>Party Planners</title>
 </head>
 <body>
+<!--list for displaying list of parties-->
+<ul id="partyList">
+
+<li>  
+Party Name: <span class="partyName">Party 1</span>
+Date: <span class="partyDate">2022-01-01</span>
+Time: <span class="partyTime">#</span>
+Party Size <span class="partySize">#</span>
+
+<!--Delete-->
+<button class="deleteButton" data-party-id="1">Delete</button>
+</li>
+
+</ul>
+
+<!--Form for adding parties-->
+<form id="partyForm">
+<!--input fields-->
+
+<!--Name-->
+<label for="partyName">Party Name:</label>
+<input type="text" id="partyName" name="partyName" required>
+
+<!--Date-->
+<label for="partyDate">Date:</label>
+<input type="date" id="partyDate" name="partyDate" required>
+
+<!--Time-->
+<label for ="partyTime">Time:</label>
+<input type="time" id="partyTime" name="partyTime" required>
+
+<!--Size-->
+
+<label for="partySize">Size:</label>
+<input type="number" id="partySize" name="partySize" required>
+
+</form>
     
+
 </body>
 </html>
