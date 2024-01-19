@@ -4,7 +4,7 @@ async function getParties() {
     try {
         const response = await fetch(`${baseURL}/events`);
         const data = await response.json();
-
+        console.log(data);
         if (data.success) {
             return data.data;
         } else {
@@ -49,3 +49,29 @@ async function fetchDataAndRender() {
 
 // Call the asynchronous function
 fetchDataAndRender();
+
+//POST to events
+
+async function addParty(partyData) {
+    try {
+        const response = await fetch(`${baseURL}/events`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(partyData),
+        });
+
+        const data = await response.json();
+        console.log(data);
+
+        if (data.success) {
+            // If party addition is successful, refresh the party list
+            fetchDataAndRender();
+        } else {
+            console.error('Error adding party:', data.error.message);
+        }
+    } catch (error) {
+        console.error('Error adding party:', error);
+    }
+}
